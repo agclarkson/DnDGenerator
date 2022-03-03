@@ -2,7 +2,7 @@
 
 # from tkinter import *
 # from tkinter.messagebox import *
-from self import self
+from self import *
 import time
 # class DnD:
 #     def __init__(self,parent):
@@ -150,7 +150,7 @@ def race_dragonborn():
     print("Your Strength Modifier is",self.strength,"\nYour Dexterity Modifier is",self.dexterity,"\nYour Constitution Modifier is",self.constitution,"\nYour Intelligence Modifier is",self.intelligence,"\nYour Wisdom Modifier is",self.wisdom,"\nYour Charisma Modifier is",self.charisma,"\nYou speak",self.character_languages,"\nYour draconic ancestry is",self.draconic_ancestry,"\nYou have proficiency in",self.proficiencies,"\nYour breath weapon range is",self.breath_weapon_range,"\nYour self.skills include",self.skills)
         
 
-
+###Sets up Dwarf race base stats and proficiencies/skills. Runs the subrace script of choice when selected.###
 def race_dwarf():
     print("You have chosen to become a Dwarf\n")
     f = open('dwarf_description.txt','r')
@@ -209,7 +209,7 @@ def race_dwarf_choice():
         race_dwarf_choice()    
 
     print("You are a",self.character_race,"\nYour Strength Modifier is",self.strength,"\nYour Dexterity Modifier is",self.dexterity,"\nYour Constitution Modifier is",self.constitution,"\nYour Intelligence Modifier is",self.intelligence,"\nYour Wisdom Modifier is",self.wisdom,"\nYour Charisma Modifier is",self.charisma,"\nYou speak",self.character_languages,"\nYou have proficiency in",self.proficiencies,"\nYour skills include",self.skills)
-    
+    select_character_class()
 
 
 
@@ -229,6 +229,7 @@ def race_elf():
     self.skills.append("Dark Vision")
     self.skills.append("Trance")
     self.proficiencies.append("Perception")
+    
 
 
 
@@ -329,7 +330,7 @@ def race_tiefling():
 
 ###Runs the appropriate character race selection function###
 def select_character_race():
-    self.character_choice = input("What race would you like to be? \nDragonborn\nDwarf\nElf\nGnome\nHalf Elf\nHalfling\nHalf Orc\nHuman\nTiefling\nInput your choice here: ")
+    self.character_choice = input("What race would you like to be? \nDragonborn(db)\nDwarf(dw)\nElf(e)\nGnome(gn)\nHalf Elf(he)\nHalfling(ha)\nHalf Orc(ho)\nHuman(hu)\nTiefling(ti)\nSelect your race by typing the name of the race or the short code that appears next to it: ")
 
 
     self.character_choice = self.character_choice.lower()
@@ -416,7 +417,47 @@ def class_wizard():
 
 ###Runs the appropriate character class selection function###
 def select_character_class():
-    return
+    self.character_choice_c = input("What class would you like to be? \nBarbarian(b)\nBard(ba)\nCleric(c)\nDruid(d)\nFighter(f)\nMonk(m)\nPaladin(p)\nRanger(ra)\nRogue(ro)\nSorcerer(s)\nWarlock(wa)\nWizard(wi)\nChoose your class by entering it's name or the code next to the class above: ")
+
+
+    self.character_choice_c = self.character_choice_c.lower()
+    if self.character_choice_c == "barbarian" or self.character_choice == "b":
+        class_barbarian()
+        
+    elif self.character_choice_c == "bard" or self.character_choice == "ba":
+        class_bard()
+        
+    elif self.character_choice_c == "cleric" or self.character_choice == "c":
+        class_cleric()
+        
+    elif self.character_choice_c == "druid" or self.character_choice == "d":
+        class_druid()
+        
+    elif self.character_choice_c == "fighter" or self.character_choice == "f":
+        class_fighter()
+        
+        
+    elif self.character_choice_c == "monk" or self.character_choice == "m":
+        class_monk()
+        
+        
+    elif self.character_choice_c == "paladin" or self.character_choice == "p":
+        class_paladin()
+        
+    elif self.character_choice_c == "ranger" or self.character_choice == "ra":
+        class_ranger()
+        
+    elif self.character_choice_c == "rogue" or self.character_choice == "ro":
+        class_rogue()
+    
+    elif self.character_choice_c == "sorcerer" or self.character_choice == "s":
+        class_sorcerer()
+    
+    elif self.character_choice_c == "warlock" or self.character_choice == "wa":
+        class_warlock()
+    
+    elif self.character_choice_c == "wizard" or self.character_choice == "wi":
+        class_wizard()
 
 
 # root = Tk()
